@@ -1,0 +1,18 @@
+function Get-WingetDirectory {
+    $ResolveWingetPath = Resolve-Path "C:\Program Files\WindowsApps\Microsoft.DesktopAppInstaller_*_x64__8wekyb3d8bbwe\winget.exe"
+    if ($ResolveWingetPath){
+           $WingetPath = $ResolveWingetPath[-1].Path
+    }
+
+    $Wingetpath = Split-Path -Path $WingetPath -Parent
+    cd $wingetpath
+}
+
+Get-WingetDirectory
+
+$AppInstalled = Get-Item -Path $wingetpath -ErrorAction SilentlyContinue
+if (-not $AppInstalled) {
+    return 1618
+} else {
+    return 0
+}
