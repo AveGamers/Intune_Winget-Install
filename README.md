@@ -8,6 +8,10 @@
 ## Compile package
 > To create the needed .intunewin file, run `run.bat`.
 
+## Why is there so much in the detect.ps1 file?
+> When choosing the custom detection script method in intune, intune first runs the detection script and proceeds on its status code.
+> To make it more reliable, you can either just put your whole script in there (like I did) or call the needed files after a self-check.
+
 ## Install:
 > powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File install.ps1 
 
@@ -15,4 +19,4 @@
 > powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File uninstall.ps1
 
 ## Detection Rule: 
-> Customt Detection Script (The Script itself validates the install)
+> Custom Detection Script (The Script itself validates the install)
